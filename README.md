@@ -2,7 +2,7 @@
 
 **OVRSIZ** is a fictional online streetwear brand founded in 2026. This repository contains the static website built for **WEDE5020 Web Development (Introduction)**, Parts 1–3 of the POE.
 
-**Live website:** _ACTION REQUIRED AFTER DEPLOYMENT — paste your GitHub Pages URL here._
+**Live website:** 
 
 ---
 
@@ -187,109 +187,7 @@ Use Live Server (or another local web server) to test the map. OpenStreetMap may
 - **Prepare email instead:** compiles the validated input into an email to `hello@ovrsiz.co.za`, shows a preview, and opens the visitor's email app with the subject and body filled in. This covers the brief's requirement that the message is "compiled and included into an email" the visitor can send.
 - Until a real Formspree form ID is added, the site automatically falls back to **Prepare email** only and hides the AJAX button. See the Formspree setup steps below.
 
-## ACTION REQUIRED BEFORE SUBMISSION
 
-### Formspree setup (contact email)
-
-`hello@ovrsiz.co.za` is a fictional address. Formspree sends messages to whichever real inbox you register.
-
-1. Create a free account at https://formspree.io using an email inbox you can check.
-2. Click **+ New Form**, name it "OVRSIZ contact" and confirm the inbox address.
-3. Copy the form endpoint, for example `https://formspree.io/f/abcdwxyz`.
-4. In `contact.html`, replace `https://formspree.io/f/YOUR_FORM_ID` in the form's `action` with your endpoint. This is the only change needed: `script.js` switches on AJAX sending automatically once `YOUR_FORM_ID` is gone.
-5. After deploying, send a test message from the live contact page, confirm it arrives in your inbox (check spam), and take a screenshot as evidence. The first submission may ask you to confirm the form by email.
-
-The form ID is not a secret; it is designed to sit in public HTML.
-
-### Other actions before submission
-
-- [ ] Add your student name, number and group to **Student Information**.
-- [ ] Add Part 2 lecturer feedback and record each fix under **Part 2 Feedback Corrections** (none was supplied, so nothing is claimed).
-- [ ] Add the original source, creator and licence for all four images under **References** (see the note there).
-- [ ] Complete the IIE AI disclosure annexe with screenshots (see **AI Assistance Disclosure**).
-- [ ] Copy this project into your lecturer-provided GitHub repository, keeping its existing Part 1/Part 2 history, and commit in logical steps (see **Suggested Commit Messages**).
-
-## GitHub Pages Deployment
-
-All site files are at the repository root and every local path is relative (for example `style.css`, `script.js`, `images/...`, never `/style.css`), so the site works under a project URL such as `https://username.github.io/repository-name/`. Filenames are all lowercase and match their references exactly; GitHub Pages is case-sensitive.
-
-1. Commit and push the final project to the `main` branch of your GitHub repository.
-2. Open the repository on GitHub.
-3. Go to **Settings**.
-4. Select **Pages** in the left sidebar.
-5. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-6. Select the branch **main**.
-7. Select the folder **/ (root)**.
-8. Click **Save**.
-9. Wait 1–3 minutes until the page shows "Your site is live at …". If the repository is private, your GitHub plan must allow Pages for private repositories; otherwise ask your lecturer.
-10. Open every public page on the live URL.
-11. Check that CSS, JavaScript, images and the map all load.
-12. Copy the live URL.
-
-## ACTION REQUIRED AFTER DEPLOYMENT
-
-1. In `sitemap.xml` (5 places) and `robots.txt` (1 place), replace `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/` with your real live URL. Keep the trailing slash.
-2. Paste the live URL at the top of this README (**Live website**).
-3. Commit these updates (for example `seo: set live GitHub Pages URL in sitemap and robots`) and push.
-4. Wait for GitHub Pages to redeploy, then repeat the checks below.
-
-## Post-Deployment Checks
-
-- [ ] index.html loads at the live URL
-- [ ] CSS works on all five pages
-- [ ] JavaScript works (no errors in the browser console, F12 → Console)
-- [ ] Navigation works, including the mobile Menu button
-- [ ] All four images load
-- [ ] Map shows both markers; pan, zoom and "Show on map" work
-- [ ] Lightbox opens and closes (button, Escape, backdrop)
-- [ ] Search and sort work, including the no-results message
-- [ ] Enquiry form validates and shows the summary with estimated cost
-- [ ] Contact form validates; AJAX shows Sending → Success
-- [ ] Test email received in your Formspree inbox (screenshot taken)
-- [ ] Tested on a mobile phone
-- [ ] `sitemap.xml` opens at the live URL and uses the final URL
-- [ ] `robots.txt` opens at the live URL and uses the final URL
-
-## Testing Record
-
-Local tests on 2 November 2026 in a Chromium-based browser served over `http://127.0.0.1` at 375px, 768px and 1280px. PASS means the result was observed locally. Live deployment, real email delivery and other browsers are not yet tested.
-
-| Test | Expected | Result |
-|---|---|---|
-| All pages load; local paths and filename case resolve | No missing files | PASS (static check of every `href`/`src`) |
-| No horizontal overflow at 375/768/1280px | Page fits the viewport | PASS on all five pages |
-| Mobile menu button | Opens/closes the nav; `aria-expanded` updates | PASS |
-| Search "HOODIE" / "zzz" / empty | 1 result / no-results message / 2 results | PASS |
-| Sort A–Z, price low–high, price high–low | Correct order | PASS |
-| Lightbox open and close (Escape, button, backdrop) | Opens with caption; closes; focus returns | PASS |
-| Map | Leaflet loads, 2 markers, tiles load, "Show on map" opens the correct popup | PASS |
-| Enquiry: blank submit | 6 inline errors; focus on first field | PASS |
-| Enquiry: bad email, phone, quantity 0, short details | Specific error for each | PASS |
-| Enquiry: wholesale, 12 hoodies | Summary with 12 × R850.00 = R10,200.00 | PASS |
-| Enquiry: sponsorship, phone reply | Product fields hidden; phone required; relevant next steps | PASS |
-| Contact: blank, then bad email | Inline errors | PASS |
-| Contact: prepare email with `<b>` and `&` in message | Literal text in preview; encoded mailto link | PASS |
-| Contact AJAX (test copy, mocked network) | Sending → Success (form cleared); failure → Error (input kept) | PASS |
-| Browser console | No errors | PASS |
-| Real Formspree delivery and live deployment | Email arrives; live pages work | **PENDING** (needs your setup) |
-
-## Suggested Commit Messages
-
-No commits were made for you, and this folder is not a Git repository. Suggested commits that match the actual changes:
-
-```text
-fix: replace repeated logo h1 with page-specific h1 headings
-seo: rename images to descriptive filenames and improve alt text
-seo: write unique titles, keywords and descriptions for every page
-seo: add robots.txt sitemap line and sitemap.xml
-feat: add responsive mobile menu toggle
-feat: add price high-to-low sort and improve search feedback
-feat: replace Google Maps embeds with Leaflet map showing both stores
-feat: add phone, reply method, sponsorship and quantity to enquiry form
-feat: show enquiry summary with estimated retail cost and email option
-feat: send contact form via Formspree with fetch and status messages
-docs: merge documentation into README and remove extra markdown files
-```
 
 ## Part 3 Changelog
 
@@ -339,26 +237,7 @@ docs: merge documentation into README and remove extra markdown files
 
 Part 2 feedback could not be verified: no lecturer feedback was supplied with the project. The fixes above came from auditing the site against the Part 3 rubric and are **not** claimed as lecturer-requested changes.
 
-**ACTION REQUIRED:** add each feedback comment from your Part 2 marks here, with the change you made and the file it affects:
 
-| Lecturer feedback | Change made | File(s) |
-|---|---|---|
-| _to be added_ | | |
-
-## Code Walkthrough Questions
-
-Be ready to explain these in your own words:
-
-1. **Why keep HTML product cards if JavaScript renders them?** They are the content source and the no-JavaScript fallback.
-2. **How does search work?** It trims and lowercases the query and filters the product array by name and description.
-3. **How does sorting work?** `Array.sort` with `localeCompare` for names and price subtraction for numbers.
-4. **How does the lightbox support keyboards?** The native `<dialog>` keeps focus inside, Escape closes it, and focus returns to the photo that opened it.
-5. **Why do the two forms differ?** The enquiry form calculates a cost and gives next steps; the contact form delivers a general message by email.
-6. **Why validate on blur and on submit?** Blur gives early feedback; submit checks every field before processing.
-7. **Why `textContent` and `encodeURIComponent`?** They show user input as plain text and encode it safely inside an email link, which prevents code injection.
-8. **How does the AJAX contact form work?** `fetch()` posts `FormData` to Formspree with `Accept: application/json`, then the status message updates without reloading the page.
-9. **Why Leaflet instead of Google Maps?** It is free, needs no API key, works on GitHub Pages, and lets JavaScript control markers, popups and "fly to" interactions.
-10. **Why keep meta keywords?** The rubric asks for them, even though modern search engines largely ignore them.
 
 ## References
 
@@ -386,7 +265,6 @@ Anthropic (2026) *Claude* [AI coding assistant]. Assistance with OVRSIZ WEDE5020
 
 OpenAI (2026) *Codex* [AI coding assistant]. Assistance with OVRSIZ WEDE5020 Part 3, 1 November.
 
-**Image sources — ACTION REQUIRED:** the original sources were not supplied. Add the creator, source URL, access date and licence (or proof of ownership) for:
 
 - `ovrsiz-black-oversized-hoodies-streetwear.jpeg` (was `hero-image.jpeg`)
 - `marcus-ovrsiz-founder.jpg` (was `founder.jpg`)
@@ -406,11 +284,7 @@ The brand, storyline, page content, images, product descriptions and prices came
 
 Suggested in-text acknowledgement: "Part 3 functionality and documentation were developed with AI assistance (OpenAI, 2026; Anthropic, 2026)."
 
-**ACTION REQUIRED:** make sure the final AI in-text citation, full reference and disclosure annexe (with screen grabs of the prompts and responses) match the IIE guidelines supplied by your lecturer. Review and understand all AI-assisted code before submission.
 
-## Screenshots
-
-Local preview of the products page (1 November 2026, before the 2 November changes; retake after deployment):
 
 ![Desktop product catalogue](docs/screenshots/products-desktop.jpg)
 ![Mobile product catalogue](docs/screenshots/products-mobile.jpg)
