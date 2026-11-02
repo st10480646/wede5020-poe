@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Ambassador, Sponsorship &amp; Bulk Order Enquiries | OVRSIZ</title>
+    <meta name="description" content="Send an OVRSIZ enquiry about products, bulk orders, sponsorship or brand ambassadorship and get an instant estimated retail cost and next steps.">
+    <meta name="keywords" content="OVRSIZ enquiries, streetwear brand ambassador, streetwear sponsorship, bulk hoodie orders, wholesale streetwear South Africa">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header>
+        <a class="logo" href="index.html">OVRSIZ</a>
+        <nav aria-label="Main navigation">
+            <ul id="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html" aria-current="page">Enquiries</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h1>Work With Us / Product Enquiries</h1>
+        <p>Want to become a brand ambassador, sponsor OVRSIZ or ask about bulk orders? Fill out the form below to get an instant summary, estimated retail cost and next steps.</p>
+
+        <!-- Enquiry Form using standard HTML5 inputs -->
+        <form id="enquiry-form" action="mailto:hello@ovrsiz.co.za" method="post" enctype="text/plain">
+            <p>Fields marked optional can be left blank. All other fields are required.</p>
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" minlength="2" maxlength="80" required>
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+            <label for="phone">Phone number (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="082 555 0123" maxlength="16">
+            <fieldset>
+                <legend>Preferred reply method</legend>
+                <label class="choice"><input type="radio" name="replyMethod" value="email" checked> Email</label>
+                <label class="choice"><input type="radio" name="replyMethod" value="phone"> Phone</label>
+            </fieldset>
+            <label for="enquiryType">Type of enquiry</label>
+            <select id="enquiryType" name="enquiryType" required>
+                <option value="">Choose an option</option>
+                <option value="product">Product Information</option>
+                <option value="wholesale">Wholesale / Bulk Order</option>
+                <option value="ambassador">Brand Ambassadorship</option>
+                <option value="sponsorship">Sponsorship</option>
+            </select>
+            <fieldset id="order-details">
+                <legend>Product details</legend>
+                <label for="productChoice">Product of interest</label>
+                <select id="productChoice" name="productChoice" required>
+                    <option value="">Choose an option</option>
+                    <option value="hoodie">Essential Boxy Hoodie — R850.00</option>
+                    <option value="denim">Skate Fit Denim — R950.00</option>
+                </select>
+                <label for="quantity">Quantity (1–500)</label>
+                <input id="quantity" name="quantity" type="number" min="1" max="500" step="1" value="1" required>
+            </fieldset>
+            <label for="details">Details (10–1500 characters)</label>
+            <textarea id="details" name="details" rows="5" minlength="10" maxlength="1500" required></textarea>
+            <button type="submit">Get my enquiry summary</button>
+            <div id="enquiry-response" class="response-panel" aria-live="polite" hidden></div>
+            <noscript><p>Enable JavaScript for an instant summary, or submit to email hello@ovrsiz.co.za using your email app.</p></noscript>
+        </form>
+        <p>For a general message, visit our <a href="contact.html">contact page</a> or browse the <a href="products.html">latest collection</a>.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 OVRSIZ Clothing. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

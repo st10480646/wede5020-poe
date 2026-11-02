@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Oversized Hoodies &amp; Skate Fit Denim | OVRSIZ</title>
+    <meta name="description" content="Browse the OVRSIZ Essential Boxy Hoodie and Skate Fit Denim. Search the collection, view product photos and enquire about your favourite style.">
+    <meta name="keywords" content="OVRSIZ products, boxy hoodie, heavyweight 450gsm hoodie, skate fit denim, wide leg jeans, oversized streetwear shop">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header>
+        <a class="logo" href="index.html">OVRSIZ</a>
+        <nav aria-label="Main navigation">
+            <ul id="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html" aria-current="page">Products</a></li>
+                <li><a href="enquiry.html">Enquiries</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h1>Latest Collection</h1>
+
+        <div id="catalogue-controls" hidden>
+            <p>Search or sort the collection, then select a photo to view it larger.</p>
+            <label for="product-search">Search products</label>
+            <input type="search" id="product-search" placeholder="Try hoodie or denim">
+            <label for="product-sort">Sort products</label>
+            <select id="product-sort">
+                <option value="original">Collection order</option>
+                <option value="az">Name A–Z</option>
+                <option value="price">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+            </select>
+            <p id="search-status" role="status"></p>
+        </div>
+        <div id="product-list">
+        <!-- Product 1 -->
+        <article>
+            <img src="images/essential-boxy-hoodie-washed-black.jpeg" width="365" height="547" loading="lazy" alt="Model wearing the black Essential Boxy Hoodie with light blue wide-leg jeans">
+            <h2>Essential Boxy Hoodie - Washed Black</h2>
+            <p>100% Cotton. 450gsm. Dropped shoulders for the ultimate drape.</p>
+            <p><strong>Price:</strong> R850.00</p>
+            <a class="button-link" href="enquiry.html">Enquire about this product</a>
+        </article>
+
+        <hr>
+
+        <!-- Product 2 -->
+        <article>
+            <img src="images/skate-fit-denim-vintage-wash.jpeg" width="183" height="275" loading="lazy" alt="Model wearing faded vintage-wash Skate Fit Denim with an ultra-wide leg">
+            <h2>Skate Fit Denim - Vintage Wash</h2>
+            <p>Ultra-wide leg, heavy-duty stitching, 5-pocket styling.</p>
+            <p><strong>Price:</strong> R950.00</p>
+            <a class="button-link" href="enquiry.html">Enquire about this product</a>
+        </article>
+        </div>
+        <dialog id="lightbox" aria-labelledby="lightbox-caption">
+            <button type="button" id="lightbox-close" autofocus>Close image</button>
+            <figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure>
+        </dialog>
+        <section class="faq">
+            <h2>Product enquiries</h2>
+            <details><summary>How can I ask about a product?</summary><p>Use our <a href="enquiry.html">enquiry form</a> for product information or bulk orders. Stock and sizes must be confirmed by the team.</p></details>
+            <details><summary>Can I enquire about ambassadorship or sponsorship?</summary><p>Yes. Select Brand Ambassadorship or Sponsorship on the <a href="enquiry.html">enquiry form</a> and describe your interest in OVRSIZ.</p></details>
+            <details><summary>Where can I see the clothing in person?</summary><p>Visit our Johannesburg flagship or Cape Town pop-up. Find both on the <a href="contact.html">contact page map</a>.</p></details>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 OVRSIZ Clothing. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

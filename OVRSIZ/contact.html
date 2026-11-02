@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us: Johannesburg &amp; Cape Town Stores | OVRSIZ</title>
+    <meta name="description"
+        content="Send OVRSIZ a general message and find the Johannesburg flagship and Cape Town pop-up on an interactive map.">
+    <meta name="keywords" content="contact OVRSIZ, OVRSIZ email, Johannesburg streetwear store, Braamfontein streetwear, Cape Town pop-up, Bree Street">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header>
+        <a class="logo" href="index.html">OVRSIZ</a>
+        <nav aria-label="Main navigation">
+            <ul id="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiries</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h1>Contact Us</h1>
+        <p>Email: <a href="mailto:hello@ovrsiz.co.za">hello@ovrsiz.co.za</a></p>
+        <p>Phone: <a href="tel:+27115550198">+27 11 555 0198</a></p>
+
+        <section>
+            <h2>Send us a message</h2>
+            <p>OVRSIZ is a fictional student project. Use sample details for demonstrations. For ambassadorship, sponsorship or bulk orders, use the <a href="enquiry.html">enquiry form</a>.</p>
+            <!-- General Contact Form: sent with Formspree (AJAX) because GitHub Pages cannot run server code -->
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <p hidden><label for="contact-website">Leave this empty</label><input id="contact-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></p>
+                <input type="hidden" name="_subject" id="contact-subject" value="OVRSIZ website message">
+                <p>All fields are required.</p>
+                <label for="contactName">Name</label>
+                <input id="contactName" name="name" type="text" autocomplete="name" minlength="2" maxlength="80"
+                    required>
+                <label for="contactEmail">Email</label>
+                <input id="contactEmail" name="email" type="email" autocomplete="email" maxlength="254" required>
+                <label for="messageType">Message type</label>
+                <select id="messageType" name="messageType" required>
+                    <option value="">Choose an option</option>
+                    <option value="general">General question</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="locations">Location information</option>
+                </select>
+                <label for="message">Message (10–1500 characters)</label>
+                <textarea id="message" name="message" rows="5" minlength="10" maxlength="1500" required></textarea>
+                <button type="submit" id="send-contact">Send message</button>
+                <button type="button" id="prepare-email" class="secondary-button">Prepare email instead</button>
+                <p id="contact-status" role="status"></p>
+                <div id="email-preview" hidden>
+                    <p>Review the email below. Nothing has been sent yet. An email app is needed to send it.</p>
+                    <pre id="email-content"></pre>
+                    <a class="button-link" id="email-link" href="mailto:hello@ovrsiz.co.za">Open in email app</a>
+                </div>
+                <noscript>
+                    <p>If the form does not send, email <a href="mailto:hello@ovrsiz.co.za">hello@ovrsiz.co.za</a> directly.</p>
+                </noscript>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="locations">
+            <h2>Our Locations</h2>
+            <p>Drag to pan, use + and − (or your mouse wheel) to zoom, and select a pin or a "Show on map" button for store details. Pins mark the approximate area of each address.</p>
+            <div id="store-map" class="store-map" role="region" aria-label="Interactive map of OVRSIZ store locations">
+                <p class="map-fallback">The interactive map could not load. Use the addresses below or the OpenStreetMap links.</p>
+            </div>
+            <article>
+                <h3>Johannesburg Flagship</h3>
+                <p>123 Braamfontein Ave, Johannesburg, 2001</p>
+                <button type="button" class="map-focus" data-location="0">Show on map</button>
+                <a href="https://www.openstreetmap.org/?mlat=-26.1923&amp;mlon=28.0361#map=16/-26.1923/28.0361">Open in OpenStreetMap</a>
+            </article>
+            <article>
+                <h3>Cape Town Pop-up</h3>
+                <p>45 Bree Street, Cape Town, 8001</p>
+                <button type="button" class="map-focus" data-location="1">Show on map</button>
+                <a href="https://www.openstreetmap.org/?mlat=-33.9236&amp;mlon=18.4155#map=16/-33.9236/18.4155">Open in OpenStreetMap</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 OVRSIZ Clothing. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

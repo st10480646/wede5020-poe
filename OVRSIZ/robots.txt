@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# ACTION REQUIRED AFTER DEPLOYMENT: replace YOUR-USERNAME and YOUR-REPOSITORY with your real GitHub Pages address.
+Sitemap: https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/sitemap.xml
