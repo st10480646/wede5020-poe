@@ -4,13 +4,6 @@
 
 **Live website:** 
 
----
-
-## Student Information
-
-- Student name: _to be supplied_ (the site's founder character is Marcus; this does not establish the student's name)
-- Student number and group: _to be supplied_
-- Module: WEDE5020, Part 3 POE
 
 ## Project Overview
 
