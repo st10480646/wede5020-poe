@@ -2,7 +2,7 @@
 
 **OVRSIZ** is a fictional online streetwear brand founded in 2026. This repository contains the static website built for **WEDE5020 Web Development (Introduction)**, Parts 1–3 of the POE.
 
-**Live website:** 
+**Live website:** https://st10480646.github.io/wede5020-poe/OVRSIZ/
 
 
 ## Project Overview
